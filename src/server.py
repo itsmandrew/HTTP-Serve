@@ -17,6 +17,7 @@ class HTTPServer:
         # Bind the socket to the host and port
         self.server_socket.bind((self.host, self.port))
 
+
     def start(self):
         """ Starts the HTTP Server """
         try:
@@ -42,6 +43,7 @@ class HTTPServer:
         finally:
             self.server_socket.close()
     
+
     def handle_client(self, client_socket, client_address):
         """Handle individual client connections"""
         try:
@@ -53,7 +55,7 @@ class HTTPServer:
             request_line = request_data.split('\n')[0]
             method, path, protocol = request_line.split(' ')
 
-                       # Create a basic response
+            # Create a basic response
             response_content = f"""
             <html>
                 <head>
